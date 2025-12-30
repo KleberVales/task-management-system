@@ -23,5 +23,19 @@ public class Services {
 
     }
 
+    public void save(Tasks task) {
+
+        // regras de negócio / validações
+        if (task.getTopic() == null || task.getTopic().isBlank()) {
+            throw new IllegalArgumentException("Topic é obrigatório");
+        }
+
+        if (task.getTitle() == null || task.getTitle().isBlank()) {
+            throw new IllegalArgumentException("Title é obrigatório");
+        }
+
+        repository.save(task);
+    }
+
 
 }

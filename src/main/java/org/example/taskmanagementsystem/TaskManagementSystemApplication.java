@@ -1,5 +1,6 @@
 package org.example.taskmanagementsystem;
 
+import org.example.taskmanagementsystem.model.Tasks;
 import org.example.taskmanagementsystem.service.Services;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -20,6 +21,17 @@ public class TaskManagementSystemApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
+
+        Tasks tasks = new Tasks();
+
+        tasks.setTopic("Ano novo");
+        tasks.setTitle("Ano novo");
+        tasks.setDescription("Planejamento do pernil");
+
+        productService.save(tasks);
+
+
+
         System.out.println("📦 Lista inicial de produtos:");
         productService.showAllProducts();
 

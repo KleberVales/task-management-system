@@ -36,7 +36,10 @@ public class TaskRepository {
     }
 
     public int save(Tasks task) {
-        String sql = """INSERT INTO tasks (topic, title, description) VALUES (?, ?, ?)""";
+        String sql = """
+                        INSERT INTO tasks (topic, title, description) 
+                        VALUES (?, ?, ?)
+                        """;
 
         return jdbcTemplate.update(
                 sql,
@@ -46,4 +49,5 @@ public class TaskRepository {
         );
 
 
+}
 }
