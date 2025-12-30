@@ -1,17 +1,16 @@
 plugins {
+    id 'org.springframework.boot' version '3.5.4'
+    id 'io.spring.dependency-management' version '1.1.6'
     id 'java'
-    id 'org.springframework.boot' version '4.0.1'
-    id 'io.spring.dependency-management' version '1.1.7'
 }
 
 group = 'org.example'
 version = '0.0.1-SNAPSHOT'
-description = 'task-management-system'
 
+// ✅ Correto: sourceCompatibility dentro do bloco java
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = '21'  // ou '17' se preferir
+    targetCompatibility = '21'
 }
 
 repositories {
@@ -19,11 +18,35 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter'
+    // Spring Boot Starters (ESSENCIAIS)
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+
+    implementation 'net.bytebuddy:byte-buddy:1.14.19'
+    implementation 'net.bytebuddy:byte-buddy-agent:1.14.19'
+
+
+    // PostgreSQL - FORÇAR BAIXAR
+    implementation 'org.postgresql:postgresql:42.7.3'
+
+    // Dev Tools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// Configurações extras
+compileJava {
+    options.compilerArgs += ['-parameters']
+}
+
+bootRun {
+    jvmArgs = ['-Xmx512m']
 }
