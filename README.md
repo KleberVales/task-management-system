@@ -33,13 +33,13 @@ This project is a backend application developed in Java with Spring Boot, which 
 src/
 ├── main/
 │   ├── java/com/seuprojeto/todolist/
-│   │   ├── controller/   # Controladores REST
-│   │   ├── model/        # Entidades JPA
-│   │   ├── repository/   # Interfaces de acesso ao banco
-│   │   ├── service/      # Regras de negócio
-│   │   └── security/     # Configurações de autenticação/autorização
+│   │   ├── controller/   # REST controllers
+│   │   ├── model/        # JPA Entities
+│   │   ├── repository/   # Database access interfaces
+│   │   ├── service/      # Business rules
+│   │   └── security/     # Authentication/Authorization Settings
 │   └── resources/
-│       ├── application.properties   # Configurações do projeto
-│       └── schema.sql  / data.sql    # Scripts do banco (opcional)
+│       ├── application.properties   # Project settings
+│       └── schema.sql  / data.sql    # Database scripts 
 
 ```
