@@ -27,3 +27,19 @@ This project is a backend application developed in Java with Spring Boot, which 
 ---
 
 ## 📂 Project Structure
+
+```text
+
+src/
+├── main/
+│   ├── java/com/seuprojeto/todolist/
+│   │   ├── controller/   # Controladores REST
+│   │   ├── model/        # Entidades JPA
+│   │   ├── repository/   # Interfaces de acesso ao banco
+│   │   ├── service/      # Regras de negócio
+│   │   └── security/     # Configurações de autenticação/autorização
+│   └── resources/
+│       ├── application.properties   # Configurações do projeto
+│       └── schema.sql  / data.sql    # Scripts do banco (opcional)
+
+```
