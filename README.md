@@ -10,3 +10,4 @@ This project is a backend application developed in Java with Spring Boot, which 
 - **List tasks**: view all registered tasks.
 - **Update tasks**: edit information for an existing task.
 - **Delete tasks**: remove tasks from the system.
+- **Authentication and authorization**: access control with **Spring Security**.
