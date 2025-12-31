@@ -19,3 +19,4 @@ This project is a backend application developed in Java with Spring Boot, which 
 - **Java 21**
 - **Spring Boot**
 - **Spring MVC** (for HTTP requests)
+- **Spring Data JPA** (persistence and database integration)
