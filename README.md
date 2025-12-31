@@ -48,4 +48,18 @@ src/
 
 ## ⚙️ How to run
 
+1. Clone the repository:
+   
+   ```bash
+   
+   git clone https://github.com/seuusuario/todolist.git
+   
+   ```
+
+
+
+
+
+   
+
 
