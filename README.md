@@ -7,3 +7,4 @@ This project is a backend application developed in Java with Spring Boot, which 
 ## 🚀 Features
 
 - **Create tasks**: add new tasks with a title and description.
+- **List tasks**: view all registered tasks.
