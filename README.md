@@ -32,7 +32,7 @@ This project is a backend application developed in Java with Spring Boot, which 
 
 src/
 ├── main/
-│   ├── java/com/seuprojeto/todolist/
+│   ├── java/org/example/taskmanagementsystem
 │   │   ├── controller/   # REST controllers
 │   │   ├── model/        # JPA Entities
 │   │   ├── repository/   # Database access interfaces
