@@ -43,3 +43,9 @@ src/
 │       └── schema.sql  / data.sql    # Database scripts 
 
 ```
+
+---
+
+## ⚙️ How to run
+
+
