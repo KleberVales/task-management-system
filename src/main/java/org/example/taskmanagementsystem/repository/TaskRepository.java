@@ -50,4 +50,34 @@ public class TaskRepository {
 
 
 }
+
+    public int update(Tasks task) {
+        String sql = """
+            
+                UPDATE tasks
+            SET topic = ?,
+                title = ?,
+                description = ?
+            WHERE id = ?
+            """;
+
+        return jdbcTemplate.update(
+                sql,
+                task.getTopic(),
+                task.getTitle(),
+                task.getDescription(),
+                task.getId()
+        );
+
+}
+
+    public int deleteById(Long id) {
+        String sql = """
+            DELETE FROM tasks
+            WHERE id = ?
+            """;
+
+        return jdbcTemplate.update(sql, id);
+    }
+
 }

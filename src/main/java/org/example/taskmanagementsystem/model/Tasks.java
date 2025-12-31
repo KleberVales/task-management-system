@@ -51,6 +51,12 @@ public class Tasks {
 
     @Override
     public String toString() {
-        return super.toString();
+        return "Task{" +
+                "id=" + id +
+                ", topic='" + topic + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", createdDate=" + created_date +
+                '}';
     }
 }

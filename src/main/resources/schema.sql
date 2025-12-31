@@ -2,7 +2,6 @@
 -- Tabela principal para armazenar tarefas (To-Do List)
 
 -- Remove a tabela se já existir (apenas para desenvolvimento)
-DROP TABLE IF EXISTS tasks CASCADE;
 
 CREATE TABLE tasks (
                        id BIGSERIAL PRIMARY KEY,

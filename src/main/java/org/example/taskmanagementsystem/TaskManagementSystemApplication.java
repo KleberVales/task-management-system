@@ -22,6 +22,7 @@ public class TaskManagementSystemApplication implements CommandLineRunner {
     @Override
     public void run(String... args) {
 
+/*
         Tasks tasks = new Tasks();
 
         tasks.setTopic("Ano novo");
@@ -30,6 +31,7 @@ public class TaskManagementSystemApplication implements CommandLineRunner {
 
         productService.save(tasks);
 
+ */
 
 
         System.out.println("📦 Lista inicial de produtos:");
