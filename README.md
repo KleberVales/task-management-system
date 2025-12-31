@@ -23,3 +23,7 @@ This project is a backend application developed in Java with Spring Boot, which 
 - **Spring Security** (authentication and authorization)
 - **Database:** PostgreSQL or MySQL
 - **Maven** (dependency management)
+
+---
+
+## 📂 Project Structure
