@@ -60,7 +60,7 @@ Kleber Vales
 
 Java & Spring Software Engineer
 
-Cloud | DevOps | Git/Github |
+Cloud | DevOps | Git/Github | Docker |
 
 
 
