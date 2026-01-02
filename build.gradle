@@ -18,28 +18,28 @@ repositories {
 }
 
 dependencies {
-    // Spring Boot Starters (ESSENCIAIS)
+    // Spring MVC
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    // Spring JDBC (SEM JPA)
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // Validação
     implementation 'org.springframework.boot:spring-boot-starter-validation'
 
-
-    implementation 'net.bytebuddy:byte-buddy:1.14.19'
-    implementation 'net.bytebuddy:byte-buddy-agent:1.14.19'
-
-
-    // PostgreSQL - FORÇAR BAIXAR
-    implementation 'org.postgresql:postgresql:42.7.3'
-
-    // Dev Tools
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-    // Test
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-
+    // Spring Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
+    // PostgreSQL
+    implementation 'org.postgresql:postgresql:42.7.3'
+
+    // DevTools
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Testes
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
 
 tasks.named('test') {
     useJUnitPlatform()

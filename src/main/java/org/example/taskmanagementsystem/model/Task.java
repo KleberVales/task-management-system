@@ -1,13 +1,16 @@
 package org.example.taskmanagementsystem.model;
 
-public class Tasks {
+import java.time.LocalDateTime;
+
+public class Task {
 
     private Long id;
-    private String topic;
     private String title;
     private String description;
-    private String created_date;
+    private boolean completed;
+    private LocalDateTime createdAt;
 
+    // getters e setters
 
     public Long getId() {
         return id;
@@ -15,14 +18,6 @@ public class Tasks {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getTopic() {
-        return topic;
-    }
-
-    public void setTopic(String topic) {
-        this.topic = topic;
     }
 
     public String getTitle() {
@@ -33,14 +28,6 @@ public class Tasks {
         this.title = title;
     }
 
-    public String getCreated_date() {
-        return created_date;
-    }
-
-    public void setCreated_date(String created_date) {
-        this.created_date = created_date;
-    }
-
     public String getDescription() {
         return description;
     }
@@ -49,14 +36,30 @@ public class Tasks {
         this.description = description;
     }
 
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
     @Override
     public String toString() {
         return "Task{" +
                 "id=" + id +
-                ", topic='" + topic + '\'' +
                 ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
-                ", createdDate=" + created_date +
+                ", completed=" + completed +
+                ", createdAt=" + createdAt +
                 '}';
     }
 }

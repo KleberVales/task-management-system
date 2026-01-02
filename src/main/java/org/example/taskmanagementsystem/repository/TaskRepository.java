@@ -1,8 +1,8 @@
 package org.example.taskmanagementsystem.repository;
 
-import org.example.taskmanagementsystem.model.Tasks;
+import org.example.taskmanagementsystem.model.Task;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -10,74 +10,48 @@ import java.util.List;
 @Repository
 public class TaskRepository {
 
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
 
     public TaskRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    private RowMapper<Tasks> rowMapper = (rs, rowNum) -> {
-
-        Tasks tasks = new Tasks();
-
-        tasks.setId(rs.getLong("id"));
-        tasks.setTopic(rs.getString("topic"));
-        tasks.setTitle(rs.getString("title"));
-        tasks.setDescription(rs.getString("description"));
-        return tasks;
-
-
-    };
-
-
-    public List<Tasks> findAll() {
-
-        return jdbcTemplate.query("select * from tasks", rowMapper);
+    public List<Task> findAll() {
+        return jdbcTemplate.query(
+                "SELECT * FROM tasks ORDER BY created_at DESC",
+                new BeanPropertyRowMapper<>(Task.class)
+        );
     }
 
-    public int save(Tasks task) {
-        String sql = """
-                        INSERT INTO tasks (topic, title, description) 
-                        VALUES (?, ?, ?)
-                        """;
-
-        return jdbcTemplate.update(
-                sql,
-                task.getTopic(),
-                task.getTitle(),
-                task.getDescription()
+    public Task findById(Long id) {
+        return jdbcTemplate.queryForObject(
+                "SELECT * FROM tasks WHERE id = ?",
+                new BeanPropertyRowMapper<>(Task.class),
+                id
         );
+    }
 
-
-}
-
-    public int update(Tasks task) {
-        String sql = """
-            
-                UPDATE tasks
-            SET topic = ?,
-                title = ?,
-                description = ?
-            WHERE id = ?
-            """;
-
-        return jdbcTemplate.update(
-                sql,
-                task.getTopic(),
+    public void save(Task task) {
+        jdbcTemplate.update(
+                "INSERT INTO tasks (title, description, completed) VALUES (?, ?, ?)",
                 task.getTitle(),
                 task.getDescription(),
-                task.getId()
+                task.isCompleted()
         );
-
-}
-
-    public int deleteById(Long id) {
-        String sql = """
-            DELETE FROM tasks
-            WHERE id = ?
-            """;
-
-        return jdbcTemplate.update(sql, id);
     }
 
+    public void update(Task task) {
+        jdbcTemplate.update(
+                "UPDATE tasks SET title = ?, description = ?, completed = ? WHERE id = ?",
+                task.getTitle(),
+                task.getDescription(),
+                task.isCompleted(),
+                task.getId()
+        );
+    }
+
+    public void delete(Long id) {
+        jdbcTemplate.update("DELETE FROM tasks WHERE id = ?", id);
+    }
 }
+

@@ -1,16 +1,11 @@
--- schema.sql
--- Tabela principal para armazenar tarefas (To-Do List)
 
--- Remove a tabela se já existir (apenas para desenvolvimento)
+DROP TABLE IF EXISTS tasks;
 
-CREATE TABLE tasks (
-                       id BIGSERIAL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS tasks (
+                                     id BIGSERIAL PRIMARY KEY,
+                                     title VARCHAR(100) NOT NULL,
+    description VARCHAR(255),
+    completed BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    );
 
-                       topic VARCHAR(50) NOT NULL,
-
-                       title VARCHAR(150) NOT NULL,
-
-                       description TEXT,
-
-                       created_date DATE NOT NULL DEFAULT CURRENT_DATE
-);
