@@ -1,5 +1,7 @@
 # 📝 Task Management System (To-Do List)
 
+<img src="https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=OpenJDK&logoColor=white" alt="Java" />
+
 This project is a backend application developed in Java with Spring Boot, which implements a task management system with CRUD, authentication, and authorization functionalities.
 
 ---
