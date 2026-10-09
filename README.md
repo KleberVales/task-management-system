@@ -14,10 +14,6 @@ This project is a backend application developed in Java with Spring Boot, which 
 - **Delete tasks**: remove tasks from the system.
 - **Authentication and authorization**: access control with **Spring Security**.
 
----
-
-## 🛠️ Technologies
-
 
 ---
 
