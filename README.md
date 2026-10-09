@@ -16,7 +16,7 @@ This project is a backend application developed in Java with Spring Boot, which 
 
 ---
 
-## 🛠️ Technologies used
+## 🛠️ Technologies
 
 
 ---
